@@ -112,3 +112,4 @@ server-sanity/node_modules
 client-react/node_modules
 
 /node_modules
+server-sanity/config/.checksums
