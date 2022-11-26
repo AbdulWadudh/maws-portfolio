@@ -2,11 +2,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 
+import { modulesList } from "../../constants/commonVars";
 import images from "../../constants/images";
 
 import "./navbar.scss";
-
-const modulesList = ["home", "about", "work", "skills", "contact"];
 
 const Navbar = () => {
     const [toggle, setToggle] = useState(false);
