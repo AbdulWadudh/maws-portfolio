@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 
 import { client, urlFor } from "../../client";
-import { AppWrap } from "../../wrapper";
+import { AppWrap, MotionWrap } from "../../wrapper";
 
 import { AnimateType, WorkSection } from "./WorkSecTypes";
 import "./work.scss";
@@ -15,7 +15,6 @@ const Work = () => {
     const [filterWork, setFilterWork] = useState([]);
 
     const handleFilter = (item: string) => {
-        
         setActiveFilter(item);
         setAnimateCard({ y: 100, opacity: 0 });
 
@@ -101,4 +100,4 @@ const Work = () => {
     );
 };
 
-export default AppWrap(Work, "work");
+export default AppWrap(MotionWrap(Work, "app__works"), "work", "app__primarybg");
