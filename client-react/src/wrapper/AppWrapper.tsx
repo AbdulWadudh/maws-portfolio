@@ -1,7 +1,7 @@
 import { NavDots, SocialMedia } from "../components";
 
-const AppWrapper = (Component: any, idName: string, classNames: any) =>
-function HOC() {
+const AppWrapper = (Component: React.FC<{}>, idName: string, classNames?: string) =>
+    function HOC() {
         return (
             <div id={idName} className={`app__container ${classNames}`}>
                 <SocialMedia />

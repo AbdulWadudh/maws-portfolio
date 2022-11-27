@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { AppWrap } from "../../wrapper";
 import { client, urlFor } from "../../client";
 
+import { AboutSection } from "./AboutSecTypes";
 import "./about.scss";
 
 const About = () => {
@@ -23,20 +24,20 @@ const About = () => {
             </h2>
             <div className="app__profiles">
                 {abouts &&
-                    abouts?.map((about: any, idx) => (
+                    abouts?.map(({ title, description, imgUrl }: AboutSection, idx) => (
                         <motion.div
                             whileInView={{ opacity: 1 }}
                             whileHover={{ scale: 1.1 }}
                             transition={{ duration: 0.5, type: "tween" }}
                             className="app__profile-item"
-                            key={`${about.title}${idx}`}
+                            key={`${title}${idx}`}
                         >
-                            <img src={urlFor(about?.imgUrl).url()} alt={about.title} />
+                            <img src={urlFor(imgUrl).url()} alt={title} />
                             <h2 className="bold-text" style={{ marginTop: 20 }}>
-                                {about.title}
+                                {title}
                             </h2>
                             <p className="p-text" style={{ marginTop: 10 }}>
-                                {about.description}
+                                {description}
                             </p>
                         </motion.div>
                     ))}
@@ -45,4 +46,4 @@ const About = () => {
     );
 };
 
-export default AppWrap(About, "about", "");
+export default AppWrap(About, "about");
