@@ -1,1 +1,1 @@
-export const modulesList = ["home", "about", "work", "skills", "testimonials", "contact"];
+export const modulesList = ["home", "about", "work", "skills", "testimonial", "contact"];
